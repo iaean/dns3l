@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dns3l/dns3l/compare/v1.1.0...v1.2.0) (2025-09-18)
+
+
+### Features
+
+* Improve monitoring ([#34](https://github.com/dns3l/dns3l/issues/34)) ([85c9cb6](https://github.com/dns3l/dns3l/commit/85c9cb6f3d2578c0af5eb4ebc58b75d2ee2d1bb1))
+
 # [1.1.0](https://github.com/dns3l/dns3l/compare/v1.0.3...v1.1.0) (2025-09-02)
 
 
