@@ -77,15 +77,6 @@ info:
     DNS3L needs to utilize a lot of "foreign" infrastructure. By the polling design
     its not easy for a client to detect issues with the renewal process of its certificates.
     Just comparing the lifetime of its local certificates with the lifetime of the certificates
-    available via DNS3L seems not sufficient. `/ca/{caId}/crt/{crtName}`, `/info`
-    is providing additional hints, so a client can streamline alarming to its monitoring systems.
-    Additionally `/ca/{caId}/crt/{crtName}` contains simple hints for stale certificate detection.
-
-    # Monitoring
-
-    DNS3L needs to utilize a lot of "foreign" infrastructure. By the polling design
-    its not easy for a client to detect issues with the renewal process of its certificates.
-    Just comparing the lifetime of its local certificates with the lifetime of the certificates
     available via DNS3L seems not sufficient. `/ca/{caId}/crt/{crtName}`, `/info` and `/stat`
     are providing additional hints, so a client can streamline alarming to its monitoring systems.
     Additionally `/ca/{caId}/crt/{crtName}` contains simple hints for stale certificate detection.
@@ -106,7 +97,7 @@ servers:
 
 tags:
 - name: info
-  description: About versions and contacts
+  description: About versions, contacts, auth and renewal
 - name: stat
   description: About health of foreign infrastructure
 - name: dns
@@ -140,8 +131,8 @@ paths:
       security:
       - {}
       - oauth:
-        - write:dns
-        - read:dns
+        - write:info
+        - read:info
       - apikey: []
 
   /stat:
@@ -161,8 +152,8 @@ paths:
       security:
       - {}
       - oauth:
-        - write:dns
-        - read:dns
+        - write:stat
+        - read:stat
       - apikey: []
 
   /dns:
